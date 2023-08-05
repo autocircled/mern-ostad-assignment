@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manupulation</title>
+    <style>
+        body {
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+            display: flex;
+            place-items: center;
+            min-width: 320px;
+            flex-direction: column;
+            height: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">This is our app content</div>
+    <button id="btn">Change text</button>
+
+    <script>
+        const app = document.querySelector('#app');
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+            app.innerHTML = 'Hello World';
+        });
+
+    </script>
+
+</body>
+
+</html>

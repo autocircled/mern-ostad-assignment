@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Switcher</title>
+    <style>
+        body {
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
+        #app {
+            display: flex;
+            place-items: center;
+            min-width: 320px;
+            flex-direction: column;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #fff;
+            outline: none;
+            border: 1px solid #161616;
+            color: #1b1b1b;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .btn1.active {
+            background: yellow;
+            color: #000;
+            border-color: #adad00;
+        }
+
+        .btn2.active {
+            background: red;
+            color: #fff;
+            border-color: #960000;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>Image Switcher</h1>
+        <div>
+            <img class="image" src="https://placehold.co/300x200/yellow/000?text=Image+1" alt="">
+            <!-- <img src="https://placehold.co/300x200/red/fff?text=Image+2" alt=""> -->
+        </div>
+        <p>Click on the buttons below to swicth the image</p>
+        <div>
+            <button id="btn1" class="btn btn1 active">Image 1</button>
+            <button id="btn2" class="btn btn2">Image 2</button>
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+        const btn1 = document.querySelector('#btn1');
+        const btn2 = document.querySelector('#btn2');
+        const images = document.querySelector('.image');
+        btn1.addEventListener('click', () => {
+            btn2.classList.remove('active');
+            btn1.classList.add('active');
+            images.setAttribute('src', 'https://placehold.co/300x200/yellow/000?text=Image+1');
+        })
+        btn2.addEventListener('click', () => {
+            btn1.classList.remove('active');
+            btn2.classList.add('active');
+            console.log(btn2.classList);
+            images.setAttribute('src', 'https://placehold.co/300x200/red/fff?text=Image+2');
+        })
+    </script>
+
+</body>
+
+</html>
