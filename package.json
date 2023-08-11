@@ -2,9 +2,9 @@
   "name": "mern-ostad-assignment",
   "version": "1.0.0",
   "description": "",
-  "main": "topic-1.js",
+  "main": "8-es6-super-keyword.js",
   "scripts": {
-    "start": "nodemon code.js"
+    "start": "nodemon main"
   },
   "keywords": [],
   "author": "",
