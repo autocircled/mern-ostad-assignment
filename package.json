@@ -2,7 +2,7 @@
   "name": "mern-ostad-assignment",
   "version": "1.0.0",
   "description": "",
-  "main": "8-es6-super-keyword.js",
+  "main": "server.js",
   "scripts": {
     "start": "nodemon main"
   },
@@ -12,7 +12,5 @@
   "devDependencies": {
     "nodemon": "^3.0.1"
   },
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+  "dependencies": {}
 }
