@@ -1,6 +1,6 @@
-import express from "express"
+const express = require("express")
 
-const App = express()
+const App = new express()
 
 // Default route
 App.get("/", (req, res) => {
@@ -12,4 +12,4 @@ App.get("*", (req, res) => {
     res.status(404).send("404 Not Found")
 })
 
-export default App
+module.exports = App
