@@ -6,12 +6,10 @@ const mongoSanitize = require('express-mongo-sanitize');
 const { rateLimit } = require('express-rate-limit')
 const helmet = require('helmet')
 const hpp = require('hpp');
-// const multer = require('multer');
-// const jwt = require('jsonwebtoken');
-// const mysql = require('mysql');
-// const mongoose = require('mongoose');
-// const validator = require('validator');
-
+const multer = require('multer');
+const jwt = require('jsonwebtoken');
+const mysql = require('mysql');
+const validator = require('validator');
 
 const app = new express()
 
@@ -48,5 +46,7 @@ app.get("/", (req, res) => {
 app.get("*", (req, res) => {
     res.status(404).send("404 Not Found")
 })
+
+require('./src/Query.js');
 
 module.exports = app
