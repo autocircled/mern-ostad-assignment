@@ -47,6 +47,5 @@ app.get("*", (req, res) => {
     res.status(404).send("404 Not Found")
 })
 
-require('./src/Query.js');
 
 module.exports = app
