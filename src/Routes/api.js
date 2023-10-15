@@ -1,5 +1,6 @@
 const express = require("express");
 const StudentsController = require("../Controllers/StudentsController.js");
+const WorksController = require("../Controllers/WorksController.js");
 const AuthVerifyMiddleware = require("../Middleware/authVerifyMiddleware.js");
 
 const router = express.Router();
@@ -13,11 +14,10 @@ router.get("/verifyEmail/:email", StudentsController.verifyEmail);
 router.get("/verifyOTP/:email/:otp", StudentsController.verifyOTP);
 
 
-// router.post("/createWork", AuthVerifyMiddleware, WorksController.createWork);
-// router.get("/updateWorkStatus/:id/:status", AuthVerifyMiddleware, WorksController.updateWorkStatus);
-// router.get("/listWorkByStatus/:status", AuthVerifyMiddleware, WorksController.listWorkByStatus);
-// router.get("/workStatusCount", AuthVerifyMiddleware, WorksController.workStatusCount);
-// router.get("/deleteWork/:id", AuthVerifyMiddleware, WorksController.deleteWork);
+router.post("/createWork", AuthVerifyMiddleware, WorksController.createWork);
+router.post("/updateWorkStatus/:id/", AuthVerifyMiddleware, WorksController.updateWorkStatus);
+router.get("/listWorkByStatus/:status?", AuthVerifyMiddleware, WorksController.listWorkByStatus);
+router.post("/deleteWork/:id", AuthVerifyMiddleware, WorksController.deleteWork);
 
 
 
